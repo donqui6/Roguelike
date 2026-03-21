@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5;
     Rigidbody2D rb;
 
-    Vector2 pointerInput, moveDir;
+    [HideInInspector]
+    public Vector2 pointerInput, moveDir;
 
     [SerializeField]
     private InputActionReference moveAction, attack, jump;
