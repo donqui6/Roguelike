@@ -12,6 +12,11 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+
+#Ignore plastic SCM files
+.plastic/
+.vscode/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
