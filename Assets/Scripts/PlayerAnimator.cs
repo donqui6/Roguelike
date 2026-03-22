@@ -38,7 +38,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        else if (playerMovement.lastVerticalVector > 0)
+        else
         {
             spriteRenderer.flipX = false;
         }

@@ -45,17 +45,17 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveDir = value.Get<Vector2>();
-        Debug.Log("onMove");
+        //Debug.Log("onMove");
         rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
     }
     public void OnAttack(InputValue value)
     {
 
-        Debug.Log("onAttack");
+        //Debug.Log("onAttack");
     }
     public void OnJump(InputValue value)
     {
-        Debug.Log("onJump");
+        //Debug.Log("onJump");
         //rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
     }
 
