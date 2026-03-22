@@ -24,10 +24,23 @@ public class PlayerAnimator : MonoBehaviour
         if ( playerMovement.moveDir.x != 0 || playerMovement.moveDir.y != 0)
         {
             animator.SetBool("Move", true);
+            SpriteDirectionChecker();
         }
         else
         {
             animator.SetBool("Move", false);
+        }
+    }
+
+    void SpriteDirectionChecker()
+        {
+        if (playerMovement.lastHorizontalVector < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (playerMovement.lastVerticalVector > 0)
+        {
+            spriteRenderer.flipX = false;
         }
     }
 }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector]
     public Vector2 pointerInput, moveDir;
+    public float lastHorizontalVector, lastVerticalVector;
 
     [SerializeField]
     private InputActionReference moveAction, attack, jump;
@@ -21,18 +22,25 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        InputManagement();
+
 
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-
+        InputManagement();
     }
 
     void InputManagement()
     {
-
+        if(moveDir.x != 0)
+        {
+            lastHorizontalVector = moveDir.x;
+        }
+        if (moveDir.y != 0)
+        {
+            lastVerticalVector = moveDir.y;
+        }
     }
     public void OnMove(InputValue value)
     {
