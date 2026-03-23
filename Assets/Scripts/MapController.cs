@@ -17,6 +17,8 @@ public class MapController : MonoBehaviour
     GameObject latestChunk;
     public float maxOpDistance; //doit etre plus grand que la longueur et largeur d'un chunk
     float opDistance;
+    float optimizerCooldown;
+    public float optimizerCooldownDur;
 
     void Start()
     {
@@ -80,19 +82,27 @@ public class MapController : MonoBehaviour
 
     void ChunkOptimizer()
     {
-        foreach (GameObject chunk in spawnedChunks)
+        optimizerCooldown -= Time.deltaTime;    
+        if(optimizerCooldown <= 0f)
         {
-            opDistance = Vector3.Distance(player.transform.position, chunk.transform.position);
-            if (opDistance > maxOpDistance)
-            {
-                chunk.SetActive(false);
-
-            }
-            else
-            {
-                chunk.SetActive(true);
-            }
+            optimizerCooldown = optimizerCooldownDur;
+        } else 
+        {             
+            return;
         }
+        foreach (GameObject chunk in spawnedChunks)
+            {
+                opDistance = Vector3.Distance(player.transform.position, chunk.transform.position);
+                if (opDistance > maxOpDistance)
+                {
+                    chunk.SetActive(false);
+
+                }
+                else
+                {
+                    chunk.SetActive(true);
+                }
+            }
     }
 
 }
