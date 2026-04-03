@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1355529757}
-  - component: {fileID: 1355529756}
+  - component: {fileID: 1355529758}
   m_Layer: 0
   m_Name: Map Controller
   m_TagString: Untagged
@@ -542,28 +542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1355529756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355529755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b35873307bec3b49871e78fc20e4bb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapController
-  terrainChunks:
-  - {fileID: 8816334467837851390, guid: a74f998b8e0b7dd42abfa40458024df3, type: 3}
-  player: {fileID: 464042790}
-  checkerRadius: 0.2
-  terrainMask:
-    serializedVersion: 2
-    m_Bits: 64
-  currentChunk: {fileID: 0}
-  spawnedChunks: []
-  maxOpDistance: 60
 --- !u!4 &1355529757
 Transform:
   m_ObjectHideFlags: 0
@@ -579,6 +557,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355529758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355529755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b35873307bec3b49871e78fc20e4bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapController
+  terrainChunks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
+  checkerRadius: 0
+  terrainMask:
+    serializedVersion: 2
+    m_Bits: 0
+  currentChunk: {fileID: 0}
+  spawnedChunks: []
+  maxOpDistance: 0
+  optimizerCooldownDur: 0
 --- !u!1001 &6292365558632157249
 PrefabInstance:
   m_ObjectHideFlags: 0
